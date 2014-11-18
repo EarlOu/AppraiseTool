@@ -57,7 +57,6 @@ public class NavigationDrawerFragment extends Fragment {
 
 	private int mCurrentSelectedPosition = 0;
 	private boolean mFromSavedInstanceState;
-	private boolean mUserLearnedDrawer;
 
 	public NavigationDrawerFragment() {
 	}
@@ -71,7 +70,6 @@ public class NavigationDrawerFragment extends Fragment {
 		// drawer. See PREF_USER_LEARNED_DRAWER for details.
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(getActivity());
-		mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
 
 		if (savedInstanceState != null) {
 			mCurrentSelectedPosition = savedInstanceState
@@ -108,9 +106,8 @@ public class NavigationDrawerFragment extends Fragment {
 				.getThemedContext(),
                 R.layout.drawer_item,
 				android.R.id.text1, new String[] {
-						getString(R.string.title_section1),
-						getString(R.string.title_section2),
-						getString(R.string.title_section3), }));
+						getString(R.string.land_dev_appr),
+						getString(R.string.oo_appr), }));
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 		return mDrawerListView;
 	}
@@ -175,17 +172,6 @@ public class NavigationDrawerFragment extends Fragment {
 					return;
 				}
 
-				if (!mUserLearnedDrawer) {
-					// The user manually opened the drawer; store this flag to
-					// prevent auto-showing
-					// the navigation drawer automatically in the future.
-					mUserLearnedDrawer = true;
-					SharedPreferences sp = PreferenceManager
-							.getDefaultSharedPreferences(getActivity());
-					sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true)
-							.apply();
-				}
-
 				getActivity().invalidateOptionsMenu(); // calls
 														// onPrepareOptionsMenu()
 			}
@@ -194,7 +180,7 @@ public class NavigationDrawerFragment extends Fragment {
 		// If the user hasn't 'learned' about the drawer, open it to introduce
 		// them to the drawer,
 		// per the navigation drawer design guidelines.
-		if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
+		if (!mFromSavedInstanceState) {
 			mDrawerLayout.openDrawer(mFragmentContainerView);
 		}
 
@@ -270,12 +256,12 @@ public class NavigationDrawerFragment extends Fragment {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
-
-		if (item.getItemId() == R.id.action_example) {
-			Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT)
-					.show();
-			return true;
-		}
+//
+//		if (item.getItemId() == R.id.action_example) {
+//			Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT)
+//					.show();
+//			return true;
+//		}
 
 		return super.onOptionsItemSelected(item);
 	}
