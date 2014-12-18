@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">房地產估價</string>
+    <string name="land_dev_appr">土地開發法</string>
+    <string name="oo_appr">ＯＯ法</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="location">地區</string>
+    <string name="building_param">營造工程物價指數</string>
+    <string name="default_building_param_base_value">92.44</string>
+    <string name="default_building_param_curr_value">101.4</string>
+    <string name="default_building_param_base_time">2009.07</string>
+    <string name="default_building_param_curr_time">2014.10</string>
+    <string name="update_value">更新數據</string>
+    <string name="base_value">基數</string>
+    <string name="current_value">最新</string>
+    <string name="manual_typed">自行輸入</string>
+    <string name="basic_param">參數</string>
+    <string name="elec_equipment">機電設備(100%)</string>
+    <string name="floor">樓層</string>
+    <string name="floor_area_rate">容積率(100%)</string>
+    <string name="building_price">房價(萬)</string>
+    <string name="add_city_renew">加計都更</string>
+    <string name="floor_area_rate_bonus">容積獎勵(%)</string>
+    <string name="result">計算結果</string>
+    <string name="building_fee">建物造價(元)</string>
+    <string name="land_price">土地單價(元)</string>
+    <string name="int_land_price">取整為(元)</string>
+    
+    <string name="not_a_number">N/A</string>
+
+    <string-array name="location_entry">
+        <item>台北市</item>
+        <item>新北市</item>
+    </string-array>
+
+</resources>
