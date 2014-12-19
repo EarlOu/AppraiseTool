@@ -1,6 +1,11 @@
-.gradle
+# Android 
 /local.properties
+build
+
+# IDE
+.gradle
 /.idea/workspace.xml
 /.idea/libraries
+
+# OSX
 .DS_Store
-/build
