@@ -3,7 +3,7 @@
 
     <string name="app_name">房地產估價</string>
     <string name="land_dev_appr">土地開發法</string>
-    <string name="oo_appr">ＯＯ法</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>

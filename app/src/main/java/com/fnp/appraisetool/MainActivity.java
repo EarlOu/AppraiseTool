@@ -20,12 +20,6 @@ NavigationDrawerFragment.NavigationDrawerCallbacks {
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
-    /**
-     * Used to store the last screen title. For use in
-     * {@link #restoreActionBar()}.
-     */
-    private CharSequence mTitle;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +27,6 @@ NavigationDrawerFragment.NavigationDrawerCallbacks {
 
         mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager()
                 .findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
@@ -49,20 +42,10 @@ NavigationDrawerFragment.NavigationDrawerCallbacks {
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new LandDevApprFragment()).commit();
                 break;
-            case 1:
-                break;
         }
     }
 
     public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.land_dev_appr);
-                break;
-            case 2:
-                mTitle = getString(R.string.oo_appr);
-                break;
-        }
     }
 
     @Override
@@ -82,10 +65,6 @@ NavigationDrawerFragment.NavigationDrawerCallbacks {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 

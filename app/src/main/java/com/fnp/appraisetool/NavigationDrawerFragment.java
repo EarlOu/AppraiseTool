@@ -106,8 +106,7 @@ public class NavigationDrawerFragment extends Fragment {
 				.getThemedContext(),
                 R.layout.drawer_item,
 				android.R.id.text1, new String[] {
-						getString(R.string.land_dev_appr),
-						getString(R.string.oo_appr), }));
+						getString(R.string.land_dev_appr) }));
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 		return mDrawerListView;
 	}
@@ -256,13 +255,6 @@ public class NavigationDrawerFragment extends Fragment {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
-//
-//		if (item.getItemId() == R.id.action_example) {
-//			Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT)
-//					.show();
-//			return true;
-//		}
-
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -275,7 +267,7 @@ public class NavigationDrawerFragment extends Fragment {
 		ActionBar actionBar = getActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setTitle(R.string.app_name);
+		actionBar.setTitle(getString(R.string.app_name));
 	}
 
 	private ActionBar getActionBar() {
