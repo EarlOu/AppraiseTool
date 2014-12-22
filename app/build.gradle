@@ -20,4 +20,6 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
+    compile files('libs/jsoup-1.8.1-javadoc.jar')
+    compile files('libs/jsoup-1.8.1.jar')
 }

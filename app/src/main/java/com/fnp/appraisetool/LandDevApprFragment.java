@@ -1,5 +1,6 @@
 package com.fnp.appraisetool;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import android.app.Fragment;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -160,6 +162,24 @@ OnItemSelectedListener {
 
         getBuildingParamFromLocal();
         updateBuildingParamView();
+
+        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                BuildingParamApi api = new BuildingParamApi();
+                try {
+                    BuildingParamApi.BuildingParam param = api.getLastestParam();
+                } catch (BuildingParamApi.ParsingErrorException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        };
+
+        task.execute();
 
         return mainView;
     }
