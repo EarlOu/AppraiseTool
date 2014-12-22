@@ -32,6 +32,11 @@
     
     <string name="not_a_number">N/A</string>
 
+    <string name="network_err">連線錯誤</string>
+    <string name="parsing_err">更新格式錯誤</string>
+
+    <string name="updating">更新中</string>
+
     <string-array name="location_entry">
         <item>台北市</item>
         <item>新北市</item>
