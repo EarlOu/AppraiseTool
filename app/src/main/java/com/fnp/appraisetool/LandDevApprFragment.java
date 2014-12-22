@@ -200,8 +200,10 @@ OnItemSelectedListener {
                     Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                mBuildingParamCurrentTimeText.setText(String.format("%4d.%2d", res.year, res.month));
+                mBuildingParamCurrentTime = String.format("%4d.%2d", res.year, res.month);
+                mBuildingParamCurrentTimeText.setText(mBuildingParamCurrentTime);
                 mBuildingParamCurrentValueText.setText(String.valueOf((float) res.buildingParam));
+
                 saveBuildingParam();
                 updateBuildingParamView();
             }
