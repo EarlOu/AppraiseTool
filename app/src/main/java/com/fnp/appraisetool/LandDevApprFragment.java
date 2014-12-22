@@ -1,8 +1,5 @@
 package com.fnp.appraisetool;
 
-import java.io.IOException;
-import java.io.InterruptedIOException;
-
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -25,6 +22,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InterruptedIOException;
 
 public class LandDevApprFragment extends Fragment implements TextWatcher, OnClickListener,
 OnItemSelectedListener {
