@@ -33,7 +33,7 @@
     <string name="not_a_number">N/A</string>
 
     <string name="network_err">連線錯誤</string>
-    <string name="parsing_err">更新格式錯誤</string>
+    <string name="parsing_err">更新錯誤</string>
 
     <string name="updating">更新中</string>
 

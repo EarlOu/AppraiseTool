@@ -44,6 +44,8 @@ public class BuildingParamApi {
     private static final String URL_BUILDING_PARAM
             = "http://ebas1.ebas.gov.tw/pxweb/Dialog/Saveshow.asp";
 
+    private static final String URL_HOST = "ebas1.ebas.gov.tw";
+
     public BuildingParam getLastestParam() throws ParsingErrorException, IOException {
         BuildingParam param = parseLastestParamElement(getParamListPage());
         param.buildingParam = parseBuildingParam(getBuildingParamPage(param.option));
@@ -52,7 +54,11 @@ public class BuildingParamApi {
 
     private Document getParamListPage() throws IOException {
         Connection conn = Jsoup.connect(URL_BUILDING_PARAM_LIST);
-        return conn.get();
+        Document doc = conn.get();
+        if (!doc.baseUri().equals(URL_BUILDING_PARAM_LIST)) {
+            throw new IOException();
+        }
+        return doc;
     }
 
     private BuildingParam parseLastestParamElement(Document paramListPage) throws ParsingErrorException {
@@ -82,6 +88,10 @@ public class BuildingParamApi {
                 + "&values2=131&values3=1&context1=&begin1=&context2=&begin2=&context3=&begin3=&matrix=PR0502A1M&root=..%2FPXfile%2FPriceStatistics%2F&classdir=..%2FPXfile%2FPriceStatistics%2F&noofvar=3&elim=NNN&numberstub=1&lang=9&varparm=ma%3DPR0502A1M%26ti%3D%25C0%25E7%25B3y%25A4u%25B5%257B%25AA%25AB%25BB%25F9%25AB%25FC%25BC%25C6%252D%25A4%25EB%26path%3D%252E%252E%252FPXfile%252FPriceStatistics%252F%26xu%3D%26yp%3D%26lang%3D9&ti=%C0%E7%B3y%A4u%B5%7B%AA%AB%BB%F9%AB%FC%BC%C6-%A4%EB&infofile=&mapname=&multilang=&mainlang=&timevalvar=&hasAggregno=0&sel=%C4%7E%C4%F2&stubceller=1&headceller=1&pxkonv=asp1";
 
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        Log.e("test", conn.getURL().getHost()+"");
+        if (!conn.getURL().getHost().equals(URL_HOST)) {
+            throw new IOException();
+        }
 
         OutputStream os = null;
         InputStream is = null;
