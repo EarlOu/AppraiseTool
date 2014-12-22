@@ -1,27 +1,16 @@
 package com.fnp.appraisetool;
 
-import android.util.Log;
-import android.util.Xml;
-
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 import org.jsoup.Jsoup;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BuildingParamApi {
 
@@ -88,7 +77,6 @@ public class BuildingParamApi {
                 + "&values2=131&values3=1&context1=&begin1=&context2=&begin2=&context3=&begin3=&matrix=PR0502A1M&root=..%2FPXfile%2FPriceStatistics%2F&classdir=..%2FPXfile%2FPriceStatistics%2F&noofvar=3&elim=NNN&numberstub=1&lang=9&varparm=ma%3DPR0502A1M%26ti%3D%25C0%25E7%25B3y%25A4u%25B5%257B%25AA%25AB%25BB%25F9%25AB%25FC%25BC%25C6%252D%25A4%25EB%26path%3D%252E%252E%252FPXfile%252FPriceStatistics%252F%26xu%3D%26yp%3D%26lang%3D9&ti=%C0%E7%B3y%A4u%B5%7B%AA%AB%BB%F9%AB%FC%BC%C6-%A4%EB&infofile=&mapname=&multilang=&mainlang=&timevalvar=&hasAggregno=0&sel=%C4%7E%C4%F2&stubceller=1&headceller=1&pxkonv=asp1";
 
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        Log.e("test", conn.getURL().getHost()+"");
         if (!conn.getURL().getHost().equals(URL_HOST)) {
             throw new IOException();
         }

@@ -1,7 +1,5 @@
 package com.fnp.appraisetool;
 
-import android.util.Log;
-
 import java.util.Arrays;
 
 public class LandDevAppr {
