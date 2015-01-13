@@ -20,8 +20,10 @@
     <string name="manual_typed">自行輸入</string>
     <string name="basic_param">參數</string>
     <string name="elec_equipment">機電設備(100%)</string>
+    <string name="elec_equipment_hint">Ex: 1.25</string>
     <string name="floor">樓層</string>
     <string name="floor_area_rate">容積率(100%)</string>
+    <string name="floor_area_rate_hint">Ex: 2.25</string>
     <string name="building_price">房價(萬)</string>
     <string name="add_city_renew">加計都更</string>
     <string name="floor_area_rate_bonus">容積獎勵(%)</string>
