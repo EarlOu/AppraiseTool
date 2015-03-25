@@ -64,7 +64,8 @@ public class LandDevAppr {
                            double floorAreaRate,
                            double elecEquip,
                            int _floor,
-                           double floorAreaRateBonus) {
+                           double floorAreaRateBonus,
+                           double commonLoadingRate) {
         double[] priceStep = null;
         int[][] priceTable = null;
         switch(area) {
@@ -99,7 +100,7 @@ public class LandDevAppr {
         double landPrice = (housePrice / 1.3 - Math.round(refinedBuildFee / 100.0) / 100.0)
                 * floorAreaRate * elecEquip * 1.15 * 0.3025 * 10000;
 
-        double cityLandPrice = Math.round(landPrice * (1.0 + floorAreaRateBonus / 200.0));
+        double cityLandPrice = Math.round(landPrice * (1.0 + floorAreaRateBonus / 100.0 * (100 - commonLoadingRate) / 100.0));
 
         return new LandDevResult(
                 (int) Math.round(refinedBuildFee / 100.0) * 100,

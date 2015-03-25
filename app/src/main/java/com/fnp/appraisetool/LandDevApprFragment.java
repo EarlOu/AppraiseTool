@@ -36,6 +36,7 @@ OnItemSelectedListener {
     private EditText mFloorAreaRateBonusText;
     private EditText mBuildingParamBaseValueText;
     private EditText mBuildingParamCurrentValueText;
+    private EditText mCommonLoadingText;
 
     private Button mBuildingParamUpdateButton;
 
@@ -67,6 +68,7 @@ OnItemSelectedListener {
     private double mFloorAreaRate = 0;
     private double mHousePrice = 0;
     private double mFloorAreaRateBonus = 0;
+    private double mCommonLoadingRate = 0;
 
     private int mArea = LandDevAppr.TAIPEI_CITY;
 
@@ -94,6 +96,7 @@ OnItemSelectedListener {
         mFloorAreaRateText = (EditText) mainView.findViewById(R.id.floor_area_rate);
         mHousePriceText = (EditText) mainView.findViewById(R.id.building_price);
         mFloorAreaRateBonusText = (EditText) mainView.findViewById(R.id.floor_area_rate_bonus);
+        mCommonLoadingText = (EditText) mainView.findViewById(R.id.common_loading);
 
         mBuildingFeeText = (TextView) mainView.findViewById(R.id.building_fee);
         mLandPriceText = (TextView) mainView.findViewById(R.id.land_price);
@@ -113,6 +116,7 @@ OnItemSelectedListener {
         mFloorAreaRateText.addTextChangedListener(this);
         mHousePriceText.addTextChangedListener(this);
         mFloorAreaRateBonusText.addTextChangedListener(this);
+        mCommonLoadingText.addTextChangedListener(this);
 
         downloadBuildingParam();
 
@@ -273,13 +277,20 @@ OnItemSelectedListener {
         } catch (NumberFormatException e) {
             mFloorAreaRateBonus = 0;
         }
+
+        try {
+            mCommonLoadingRate = Float.parseFloat(mCommonLoadingText.getText().toString());
+        } catch (NumberFormatException e) {
+            mCommonLoadingRate = 0;
+        }
+
         return mBuildingParamBaseValue != 0;
     }
 
     private void calculate() {
         LandDevAppr.LandDevResult res = LandDevAppr.calculate(mArea, mHousePrice,
                 mBuildingParamBaseValue, mBuildingParamCurrentValue,
-                mFloorAreaRate, mElecEquip, mFloor, mFloorAreaRateBonus);
+                mFloorAreaRate, mElecEquip, mFloor, mFloorAreaRateBonus, mCommonLoadingRate);
 
         mBuildingFeeText.setText(String.format("$%,8d", res.buildingFee));
         mLandPriceText.setText(String.format("$%,8d", res.landPrice));
