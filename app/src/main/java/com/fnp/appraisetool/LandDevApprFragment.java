@@ -186,7 +186,7 @@ OnItemSelectedListener {
             protected BuildingParamApi.BuildingParam doInBackground(Void... params) {
                 BuildingParamApi api = new BuildingParamApi();
                 try {
-                    return api.getLastestParam();
+                    return api.getLastParam();
                 } catch (BuildingParamApi.ParsingErrorException e) {
                     errorMsg = getString(R.string.parsing_err);
                 } catch (IOException e) {
