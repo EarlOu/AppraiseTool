@@ -3,6 +3,7 @@
 
     <string name="app_name">房地產估價</string>
     <string name="land_dev_appr">土地開發法</string>
+    <string name="compare_appr">比較法</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -32,6 +33,7 @@
     <string name="building_fee">建物造價(元)</string>
     <string name="land_price">土地單價(元)</string>
     <string name="int_land_price">取整為(元)</string>
+    <string name="percent">%</string>
     
     <string name="not_a_number">N/A</string>
 
@@ -44,5 +46,14 @@
         <item>台北市</item>
         <item>新北市</item>
     </string-array>
+
+    <string name="compare_price">案例價格(元)</string>
+    <string name="situation_param">情況因素(%)</string>
+    <string name="date_param">期日因素(%)</string>
+    <string name="location_param">區位條件(%)</string>
+    <string name="identical_param">個別條件(%)</string>
+    <string name="size_param">容積調整(%)</string>
+    <string name="size_param_plus">比</string>
+    <string name="size_param_real">勘</string>
 
 </resources>

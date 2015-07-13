@@ -105,7 +105,8 @@ public class NavigationDrawerFragment extends Fragment {
                 .getThemedContext(),
                 R.layout.drawer_item,
                 android.R.id.text1, new String[]{
-                getString(R.string.land_dev_appr)}));
+                getString(R.string.land_dev_appr),
+                getString(R.string.compare_appr)}));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
